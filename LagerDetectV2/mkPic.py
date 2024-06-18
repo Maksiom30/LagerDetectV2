@@ -1,6 +1,6 @@
 import cv2
 import os
-from time import sleep
+
 
 def mkPic():
     cap = cv2.VideoCapture(0)

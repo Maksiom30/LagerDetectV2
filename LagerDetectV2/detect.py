@@ -3,7 +3,8 @@ import os
 
 def detect_bottles(imgNum):
     # Bild einlesen
-    path = os.path.join(os.getcwd(), f"data/img{imgNum}.jpg")
+    path = os.path.join("/home/pi/LagerDetectV2", f"data/img{imgNum}.jpg")
+    print(path)
     image = cv2.imread(path)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     #blur = cv2.GaussianBlur(gray,(5,5),0)
@@ -25,7 +26,6 @@ def detect_bottles(imgNum):
             cv2.ellipse(image, ellipse, (0, 255, 0), 2)
             count += 1
     cv2.imwrite(path, image)
-    count += 3
 
     print(count)
 
