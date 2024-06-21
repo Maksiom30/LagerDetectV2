@@ -1,14 +1,9 @@
 import cv2
-from mkPic import mkPic
 import os
-import subprocess
-from time import sleep
 
 def getImages():
-    #path = os.path.join(os.getcwd(), "data/img.jpg")
     path = "/home/pi/LagerDetectV2/data/img.jpg"
     os.system("/home/pi/LagerDetectV2/LagerDetectV2/mkPic.sh")
-    #mkPic()
 
     img = cv2.imread(path)
 
