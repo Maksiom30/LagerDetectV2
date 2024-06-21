@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Refresh" content="120">
     <title>LagerDetectV2</title>
 </head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        background-color: lightgray;
+    }
+    main {
+        margin-top: 50px;
+        padding: 10px;
+    }
+</style>
+
 <body>
-    <h1 style="text-align: center;">Kasten 1: {count1}</h1>
-    <h1 style="text-align: center;">Kasten 2: {count2}</h1>
-    <h1 style="text-align: center;">Kasten 3: {count3}</h1>
-    <h1 style="text-align: center;">Kasten 4: {count4}</h1>
-    <h1 style="text-align: center;">Kasten 5: {count5}</h1>
-    <h1 style="text-align: center;">Kasten 6: {count6}</h1>
-    <h1 style="text-align: center;">Kasten 7: {count7}</h1>
-    <h1 style="text-align: center;">Kasten 8: {count8}</h1>
-    <h1 style="text-align: center;">Kasten 9: {count9}</h1>
-    <h1 style="text-align: center;">Kasten 10: {count10}</h1>
-    <h1 style="text-align: center;">Kasten 11: {count11}</h1>
-    <h1 style="text-align: center;">Kasten 12: {count12}</h1>
-    <img src="img.jpg" alt="" style="display: block; margin:0 auto">
+    <div class="navbar">
+        <img src="result.png" alt="" style="width: 50px;height: 50px;">
+        <h1>LagerDetectV2</h1>
+    </div>
+    <main>
+        <h2 style="text-align: center;">Flaschen Anzahl: {count1}</h2>
+        <img src="img.jpg" alt="" style="display: block; margin:0 auto; height: 500px;">
+    </main>
 </body>
 </html>

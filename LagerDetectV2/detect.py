@@ -10,9 +10,9 @@ def detect_bottles(imgNum):
     #blur = cv2.GaussianBlur(gray,(5,5),0)
     #ret3,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
     # Bildvorverarbeitung
-    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+    blurred = cv2.GaussianBlur(gray, (7, 7), 0)
     #blurred = gray
-    edges = cv2.Canny(blurred, 155, 350)
+    edges = cv2.Canny(blurred, 50, 200)
 
     # Konturen finden
     contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -35,4 +35,5 @@ def detect_bottles(imgNum):
 if __name__ == "__main__":
     import getImages
     getImages.getImages()
-    detect_bottles(1)
+    for i in range(12):
+        detect_bottles(i+1)
