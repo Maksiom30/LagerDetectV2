@@ -7,6 +7,14 @@
     <title>LagerDetectV2</title>
 </head>
 <style>
+    @font-face {
+        font-family: "A Okay";
+        src: url("/scr/aokay.ttf");
+    }
+    @font-face {
+        font-family: "Sofia Pro Regular";
+        src: url("/scr/SofiaProRegularAz.otf");
+    }
     body {
         margin: 0;
     }
@@ -14,27 +22,113 @@
     .navbar {
         display: flex;
         align-items: center;
-        justify-content: center;
+        /* justify-content: center; */
         position: fixed;
         top: 0;
         width: 100%;
         height: 50px;
-        background-color: lightgray;
+        /* background-color: #AD102A; */
+        background-image: url("scr/cropped-favicon-192x192.png");
+        border-bottom: 5px solid black;
     }
+
+    .logo {
+        height: 40px;
+        justify-self: left;
+        margin-left: 10px;
+        letter-spacing: 50px;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        font-family: "A Okay";
+        border-radius: 10px;
+        height: 40px;
+        justify-self: center;
+    }
+
+    .title-container {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    .title h1 {
+        margin: 0;
+        margin-right: 20px;
+        letter-spacing: 5px;
+    }
+
     main {
+        display: flex;
         margin-top: 50px;
         padding: 10px;
+        padding: 50px;
+        font-family: "Sofia Pro Regular";
+    }
+
+    .bg {
+        background-image: url("scr/cropped-favicon-192x192.png");
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: -1;
+        opacity: 0.3;
+    }
+
+    table, th, td{
+        border-collapse: collapse;
+        border-radius: 10px;
+    }
+    
+    table{
+        background-color: white;
+        border: 2px solid black;
+        width: 30%;
+    }
+
+    th{
+        border-bottom: 2px solid black;
+        border-right: 2px solid black;
+        padding: 5px;
+    }
+
+    td {
+        border-bottom: 1px solid grey;
+        border-right: 2px solid black;
+        text-align: center;
+    }
+    td:not(:nth-child(n+2)){
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F07F1C50;
     }
 
 </style>
 
 <body>
-    <div class="navbar">
-        <img src="result.png" alt="" style="width: 50px;height: 50px;">
-        <h1>LagerDetectV2</h1>
+    <div style="background-color: black; height: 100%; width: 100%; position: fixed;z-index: -2;">
+        <div class="bg"></div>
     </div>
+    
+    <div class="navbar">
+        <div class="logo-container">
+            <a href="https://swcode.io/"><img class="logo" src="scr/logo.png"></a>
+        </div>
 
+        <div class="title-container">
+            <div class="title">
+                <img src="result.png" style="width: 50px;height: 50px;">
+            <h1>LagerDetect</h1>
+            </div>
+        </div>
+    </div>
     <main>
+        
         <table>
             <tr>
                 <th>Getränk</th>
@@ -115,9 +209,33 @@
                 <td>{prc_count12}</td>
             </tr>
         </table>
+        <div style="margin-left: 100px; width: 70%;">
+            <h2 style="text-align: center; color: white;">Flaschen Anzahl: {count_all}</h2>
+            <img src="img.jpg" alt="" style="height: 550px; margin-left: auto;">
+        </div>
+        
 
-        <h2 style="text-align: center;">Flaschen Anzahl: {count_all}</h2>
-        <img src="img.jpg" alt="" style="display: block; margin:0 auto; height: 500px;">
+        
     </main>
+    <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
 </body>
 </html>

@@ -42,7 +42,7 @@ class RoutedHandler(http.server.SimpleHTTPRequestHandler):
         for kasten in self.kasten_list:
             kasten.nBottles = detect_bottles(kasten.id + 1)
             self.sumCount += kasten.nBottles
-
+        print(self.path[:4])
         if self.path == '/':
             self.handle_root()
         elif self.path == '/img.jpg':
@@ -51,6 +51,8 @@ class RoutedHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_logo()            
         elif self.path == "/favicon.ico":
             self.handle_favicon()
+        elif self.path[:4] == "/scr":
+            self.handle_scr()
         else:
             self.handle_404()
 
@@ -90,6 +92,16 @@ class RoutedHandler(http.server.SimpleHTTPRequestHandler):
 
     def handle_favicon(self):
         with open("/home/pi/LagerDetectV2/templates/result.png", "rb") as file:
+            img = file.read()
+            file.close()
+        self.send_response(200)
+        self.send_header('Content-type', 'image/jpeg')
+        self.end_headers()
+        self.wfile.write(img)
+
+    def handle_scr(self):
+        print(f"/home/pi/LagerDetectV2/templates/scr/{self.path[5:]}")
+        with open(f"/home/pi/LagerDetectV2/templates/scr/{self.path[5:]}", "rb") as file:
             img = file.read()
             file.close()
         self.send_response(200)
