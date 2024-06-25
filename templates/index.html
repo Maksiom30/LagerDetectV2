@@ -76,27 +76,41 @@
         z-index: -1;
         opacity: 0.4;
     }
+
+    table, th, td, tr{
+        all:unset;
+    }
     
     table{
-        all: unset;
-        border-collapse: collapse;
+        display: flex;
+        flex-direction: column;
         background-color: white;
         border: 2px solid black;
         width: 40%;
-        font-size: 18pt;
+        font-size: calc(.5em + 1vw);
+    }
+
+    tr {
+        display: inline-flex;
+        break-inside: avoid-column;
+        width: 100%;
+        height: auto;
+    }
+
+    th, td {
+        width: 25%;
+        text-align: center;
+        border-right: 2px solid black;
+        align-content: center;
     }
 
     th{
-        border-right: 2px solid black;
         border-bottom: 2px solid black;
-        padding: 5px;
-        text-align: center;
+        font-weight: bold;
     }
 
     td {
         border-bottom: 1px solid grey;
-        border-right: 2px solid black;
-        text-align: center;
     }
 
     td:last-of-type{
