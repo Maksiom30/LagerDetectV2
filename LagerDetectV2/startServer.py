@@ -60,7 +60,7 @@ class RoutedHandler(http.server.SimpleHTTPRequestHandler):
             html = file.read()
             file.close()
         for kasten in self.kasten_list:
-            html = html.replace("{namex}". replace("x", str(kasten.id + 1)), kasten.name)
+            html = html.replace("{namex}". replace("x", str(kasten.id + 1)), str(kasten.id + 1))
             html = html.replace("{countx}".replace("x", str(kasten.id + 1)), str(kasten.nBottles))
             html = html.replace("{empt_countx}".replace("x", str(kasten.id + 1)), str(kasten.max - kasten.nBottles))
             html = html.replace("{prc_countx}".replace("x", str(kasten.id + 1)), str(round(kasten.nBottles / kasten.max * 100)) + "%")
